@@ -1,5 +1,5 @@
-const Payment = require("../models/Payment");
-const Order = require("../models/Order");
+const Payment = require("../models/payment");
+const Order = require("../models/order");
 const razorpay = require("../config/razorpay");
 const crypto = require("crypto");
 

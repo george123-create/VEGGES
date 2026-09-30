@@ -1,4 +1,4 @@
-const Contact = require("../models/Contacts");
+const Contact = require("../models/contacts");
 
 // ======================================
 // CREATE CONTACT MESSAGE

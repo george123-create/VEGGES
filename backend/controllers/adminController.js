@@ -1,6 +1,6 @@
-const Product = require("../models/Product");
+const Product = require("../models/product");
 const User = require("../models/Users");
-const Order = require("../models/Order");
+const Order = require("../models/order");
 
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
