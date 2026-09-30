@@ -1,0 +1,195 @@
+/* ====================================
+   GOOGLE FONT
+==================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ====================================
+   RESET
+==================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8faf8;
+
+    color:#222;
+
+    overflow-x:hidden;
+
+}
+
+/* ====================================
+   VARIABLES
+==================================== */
+
+:root{
+
+    --primary:#2E7D32;
+
+    --secondary:#4CAF50;
+
+    --light:#ffffff;
+
+    --dark:#1b1b1b;
+
+    --gray:#f5f5f5;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:15px;
+
+}
+
+/* ====================================
+   COMMON
+==================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:80px 8%;
+
+}
+
+h1{
+
+    font-size:55px;
+
+    line-height:1.2;
+
+}
+
+h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:22px;
+
+}
+
+p{
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* ====================================
+   BUTTON
+==================================== */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px 40px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ====================================
+   SECTION TITLE
+==================================== */
+
+section h2{
+
+    text-align:center;
+
+    color:var(--primary);
+
+    margin-bottom:50px;
+
+    position:relative;
+
+}
+
+section h2::after{
+
+    content:"";
+
+    width:80px;
+
+    height:4px;
+
+    background:var(--secondary);
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    border-radius:20px;
+
+}

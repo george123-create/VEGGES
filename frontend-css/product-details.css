@@ -1,0 +1,239 @@
+/* ======================================
+   VEGGES PRODUCT DETAILS PAGE
+====================================== */
+
+
+.product-details{
+
+    min-height:80vh;
+
+    padding:60px 50px;
+
+    background:#f8f9f8;
+
+}
+
+
+
+.details-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:50px;
+
+    display:flex;
+
+    gap:60px;
+
+    align-items:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+
+}
+
+
+
+/* Product Image */
+
+.product-image{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+
+.product-image img{
+
+    width:350px;
+
+    height:350px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+}
+
+
+
+/* Product Information */
+
+.product-info{
+
+    flex:1;
+
+}
+
+
+
+.product-info h1{
+
+    font-size:40px;
+
+    color:#2E7D32;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.product-info h2{
+
+    font-size:30px;
+
+    color:#333;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.product-info p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Quantity */
+
+.quantity{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.quantity button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2E7D32;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+
+}
+
+
+
+.quantity input{
+
+    width:70px;
+
+    height:45px;
+
+    text-align:center;
+
+    font-size:18px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+}
+
+
+
+/* Add Cart Button */
+
+.cart-btn{
+
+    width:220px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2E7D32;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+.cart-btn:hover{
+
+    background:#1B5E20;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:900px){
+
+
+    .details-container{
+
+        flex-direction:column;
+
+        padding:30px;
+
+    }
+
+
+    .product-image img{
+
+        width:250px;
+
+        height:250px;
+
+    }
+
+
+    .product-info{
+
+        text-align:center;
+
+    }
+
+
+    .quantity{
+
+        justify-content:center;
+
+    }
+
+}

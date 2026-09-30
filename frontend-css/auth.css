@@ -1,0 +1,472 @@
+/* ======================================
+   VEGGES AUTH PAGE DESIGN
+====================================== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+/* Background */
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #1B5E20,
+        #4CAF50
+    );
+
+}
+
+
+
+/* Main Wrapper */
+
+.auth-section,
+.login-container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+}
+
+
+
+/* Main Card */
+
+.auth-box,
+.login-box{
+
+    width:950px;
+
+    min-height:550px;
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,0.25);
+
+}
+
+
+
+/* LEFT SIDE */
+
+.auth-left,
+.login-left{
+
+    background:
+    linear-gradient(
+        145deg,
+        #2E7D32,
+        #66BB6A
+    );
+
+    padding:70px 55px;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+
+
+.auth-left h1,
+.login-left h1{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+
+    color:#ffffff;
+
+}
+
+
+
+.auth-left h2,
+.login-left h2{
+
+    font-size:26px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+    color:#ffffff;
+
+}
+
+
+
+.auth-left p,
+.login-left p{
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#f5f5f5;
+
+}
+
+
+
+/* RIGHT SIDE */
+
+.auth-right,
+.login-right{
+
+    padding:60px 55px;
+
+    background:#ffffff;
+
+}
+
+
+
+.auth-right h2,
+.login-right h2{
+
+    text-align:center;
+
+    font-size:32px;
+
+    color:#2E7D32;
+
+    margin-bottom:35px;
+
+    font-weight:700;
+
+}
+
+
+
+/* Inputs */
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+
+
+.input-group label{
+
+    display:block;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#333;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.input-group input,
+.auth-right input{
+
+    width:100%;
+
+    height:50px;
+
+    padding:0 18px;
+
+    border:2px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    color:#333;
+
+    outline:none;
+
+    transition:0.3s;
+
+}
+
+
+
+.input-group input:focus,
+.auth-right input:focus{
+
+    border-color:#2E7D32;
+
+    box-shadow:
+    0 0 8px rgba(46,125,50,0.3);
+
+}
+
+
+
+/* Register Inputs */
+
+.auth-right input{
+
+    margin-bottom:18px;
+
+}
+
+
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2E7D32;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+button:hover{
+
+    background:#1B5E20;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* Links */
+
+
+.register-link,
+.auth-right p{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#555;
+
+}
+
+
+
+.register-link a,
+.auth-right a{
+
+    color:#2E7D32;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+}
+
+
+
+.register-link a:hover,
+.auth-right a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+/* Mobile Responsive */
+
+@media(max-width:900px){
+
+
+    .auth-box,
+    .login-box{
+
+        grid-template-columns:1fr;
+
+        width:95%;
+
+    }
+
+
+    .auth-left,
+    .login-left{
+
+        padding:45px 35px;
+
+        text-align:center;
+
+    }
+
+
+    .auth-right,
+    .login-right{
+
+        padding:40px 30px;
+
+    }
+
+}
+/* ======================================
+   PASSWORD WRAPPER
+====================================== */
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+
+/* ======================================
+   PASSWORD EYE BUTTON
+====================================== */
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 35px;
+    height: 35px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #555;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle:hover {
+    background: transparent;
+    color: #2e7d32;
+}
+
+
+
+
+
+/* ======================================
+   LOGIN SUCCESS NOTIFICATION
+====================================== */
+
+.login-notification {
+
+    position: fixed;
+
+    top: 25px;
+
+    right: 25px;
+
+    background: #2e7d32;
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-20px);
+
+    transition: all 0.3s ease;
+
+    z-index: 9999;
+
+}
+
+
+.login-notification.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+.login-notification i {
+
+    font-size: 18px;
+
+}

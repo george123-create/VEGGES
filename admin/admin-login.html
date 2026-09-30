@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VEGGES - Admin Login</title>
+
+    <!-- Admin Login CSS -->
+    <link rel="stylesheet" href="css/admin-login.css">
+</head>
+
+<body>
+
+    <div class="admin-login-container">
+
+        <div class="admin-login-card">
+
+            <!-- Logo / Brand -->
+            <div class="admin-logo">
+                <div class="logo-icon">🥬</div>
+                <h1>VEGGES</h1>
+                <p>Admin Panel</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="adminLoginForm">
+
+                <div class="form-group">
+                    <label for="email">Admin Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter admin email"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <div class="password-container">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- Error / Success Message -->
+                <div id="loginMessage" class="login-message"></div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    id="loginButton"
+                    class="login-btn"
+                >
+                    Login to Admin Panel
+                </button>
+
+            </form>
+
+
+            <!-- Back to Store -->
+            <div class="back-to-store">
+                <a href="../frontend/index.html">
+                    ← Back to VEGGES Store
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Admin Login JS -->
+    <script src="js/admin-login.js"></script>
+
+</body>
+
+</html>

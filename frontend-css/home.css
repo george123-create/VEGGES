@@ -1,0 +1,937 @@
+/* =========================================================
+   VEGGES - HOME PAGE
+   home.css
+========================================================= */
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+    min-height: 90vh;
+
+    background:
+        linear-gradient(
+            rgba(20, 70, 25, 0.45),
+            rgba(20, 70, 25, 0.45)
+        ),
+        url("../images/banners/hero.jpg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-tag {
+    display: inline-block;
+
+    background: white;
+    color: #2E7D32;
+
+    padding: 10px 22px;
+
+    border-radius: 40px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: white;
+
+    font-size: 20px;
+    line-height: 1.7;
+
+    max-width: 750px;
+
+    margin: 0 auto 20px;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    display: inline-block;
+
+    padding: 15px 40px;
+
+    border: 2px solid white;
+
+    color: white;
+
+    border-radius: 50px;
+
+    transition: 0.3s;
+
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #2E7D32;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+
+    margin: -70px 8% 0;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.service-card {
+    background: white;
+
+    padding: 40px 25px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.35s;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+}
+
+.service-card i {
+    font-size: 45px;
+
+    color: #2E7D32;
+
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+
+    color: #222;
+
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #666;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+.categories {
+    padding: 100px 8%;
+}
+
+.category-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 25px;
+}
+
+.category-card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    display: block;
+}
+
+
+.category-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+.category-card img {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s;
+}
+
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+
+.category-card h3 {
+    margin: 20px 0 10px;
+
+    color: #2E7D32;
+
+    font-size: 22px;
+}
+
+
+.category-card p {
+    color: #777;
+
+    font-size: 15px;
+
+    padding: 0 15px 20px;
+}
+
+
+/* =========================================================
+   FEATURED PRODUCTS
+========================================================= */
+
+.featured {
+    padding: 100px 8%;
+
+    background: #f8faf8;
+}
+
+.products {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 30px;
+}
+
+.product-card {
+    position: relative;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+    text-align: center;
+
+    padding-bottom: 20px;
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.discount {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: #ff4d4d;
+
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    z-index: 2;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #FFC107;
+
+    margin: 12px 0;
+
+    font-size: 18px;
+}
+
+.price {
+    color: #2E7D32;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin: 10px 0;
+}
+
+.price span {
+    color: #888;
+
+    text-decoration: line-through;
+
+    font-size: 16px;
+
+    margin-left: 8px;
+}
+
+.product-card button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    background: #2E7D32;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 15px;
+}
+
+.product-card button:hover {
+    background: #4CAF50;
+}
+
+
+/* =========================================================
+   SPECIAL OFFER
+========================================================= */
+
+.offer-banner {
+    margin: 80px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2E7D32,
+            #4CAF50
+        );
+
+    border-radius: 25px;
+
+    padding: 80px 40px;
+
+    text-align: center;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+.offer-content h4 {
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    color: #dfffd8;
+}
+
+.offer-content h2 {
+    color: white;
+
+    font-size: 48px;
+
+    margin-bottom: 20px;
+}
+
+.offer-content h2 span {
+    color: #FFD54F;
+}
+
+.offer-content p {
+    color: white;
+
+    font-size: 20px;
+
+    margin-bottom: 35px;
+}
+
+.offer-banner .btn {
+    background: white;
+
+    color: #2E7D32;
+
+    font-weight: 700;
+}
+
+.offer-banner .btn:hover {
+    background: #FFD54F;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   FARMERS SECTION
+========================================================= */
+
+.farmers {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    padding: 100px 8%;
+}
+
+.farmers-image img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.farmers-content span {
+    color: #4CAF50;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.farmers-content h2 {
+    margin: 20px 0;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+}
+
+.farmers-content p {
+    margin-bottom: 20px;
+
+    color: #555;
+
+    line-height: 1.7;
+}
+
+.farm-features {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin: 35px 0;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
+
+.testimonials {
+    padding: 100px 8%;
+
+    background: #f8faf8;
+}
+
+.testimonial-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-card img {
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 0 auto 20px;
+}
+
+.stars {
+    color: #FFC107;
+
+    margin: 15px 0;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.statistics {
+    background: #2E7D32;
+
+    color: white;
+
+    padding: 80px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 30px;
+
+    text-align: center;
+}
+
+.stat-box {
+    padding: 30px;
+}
+
+.stat-box h2 {
+    font-size: 50px;
+
+    color: #FFD54F;
+
+    margin-bottom: 15px;
+}
+
+.stat-box p {
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter {
+    padding: 100px 8%;
+
+    background: #f8faf8;
+}
+
+.newsletter-content {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.newsletter-content h2 {
+    color: #2E7D32;
+
+    margin-bottom: 20px;
+}
+
+.newsletter-content p {
+    margin-bottom: 35px;
+
+    color: #666;
+}
+
+.newsletter-form {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    width: 400px;
+
+    max-width: 100%;
+
+    padding: 18px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 50px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+.newsletter-form input:focus {
+    border-color: #2E7D32;
+}
+
+.newsletter-form button {
+    padding: 18px 35px;
+
+    border: none;
+
+    background: #2E7D32;
+
+    color: white;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: #4CAF50;
+}
+
+
+/* =========================================================
+   WHY CHOOSE VEGGES
+========================================================= */
+
+.why-us {
+    padding: 100px 8%;
+
+    background: #f5f5f5;
+
+    text-align: center;
+}
+
+.why-us > h2 {
+    margin-bottom: 50px;
+
+    font-size: 38px;
+}
+
+.why-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    text-align: center;
+}
+
+.why-container div {
+    background: white;
+
+    padding: 40px 20px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+    font-size: 30px;
+}
+
+.why-container div:hover {
+    transform: translateY(-10px);
+}
+
+.why-container h3 {
+    font-size: 18px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .farmers {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .farmers-content h2 {
+        font-size: 36px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 80vh;
+
+        padding: 50px 20px;
+
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-outline {
+        width: 200px;
+
+        text-align: center;
+    }
+
+    .services {
+        margin: 30px 5% 0;
+    }
+
+    .categories,
+    .featured,
+    .testimonials,
+    .newsletter,
+    .why-us {
+        padding: 70px 5%;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .offer-banner {
+        margin: 50px 5%;
+
+        padding: 60px 25px;
+    }
+
+    .offer-content h2 {
+        font-size: 32px;
+    }
+
+    .offer-content p {
+        font-size: 16px;
+    }
+
+    .farmers {
+        padding: 70px 5%;
+    }
+
+    .farmers-content h2 {
+        font-size: 32px;
+    }
+
+    .farm-features {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics {
+        padding: 60px 5%;
+    }
+
+    .stat-box h2 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-tag {
+        font-size: 14px;
+
+        padding: 8px 16px;
+    }
+
+    .category-container,
+    .products,
+    .testimonial-container {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .newsletter-form input {
+        width: auto;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+
+}

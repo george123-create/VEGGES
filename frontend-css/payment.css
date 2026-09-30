@@ -1,0 +1,178 @@
+/* ======================================
+   VEGGES PAYMENT PAGE
+====================================== */
+
+
+.payment-section{
+
+    min-height:80vh;
+
+    padding:60px 50px;
+
+    background:#f8f9f8;
+
+}
+
+
+
+.payment-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+
+}
+
+
+
+.payment-container h1{
+
+    text-align:center;
+
+    color:#2E7D32;
+
+    font-size:38px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* Summary */
+
+.payment-summary{
+
+    background:#f1f8f1;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.payment-summary h2{
+
+    color:#2E7D32;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.payment-summary p{
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+
+
+
+
+/* Payment Options */
+
+.payment-options h2{
+
+    color:#333;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.payment-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#f8f8f8;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    border:2px solid transparent;
+
+}
+
+
+
+.payment-card:hover{
+
+    border-color:#2E7D32;
+
+}
+
+
+
+.payment-card input{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+
+
+
+
+/* Button */
+
+#confirmPayment{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    background:#2E7D32;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+#confirmPayment:hover{
+
+    background:#1B5E20;
+
+}

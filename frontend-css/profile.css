@@ -1,0 +1,532 @@
+/* ======================================
+   VEGGES - PROFILE PAGE
+====================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7f5;
+    color: #222;
+    min-height: 100vh;
+}
+
+
+/* ======================================
+   NAVBAR
+====================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 70px;
+
+    background: #2e7d32;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 50px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    color: white;
+
+    font-size: 26px;
+    font-weight: bold;
+
+    margin-right: 50px;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+
+    gap: 30px;
+
+    flex: 1;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #dcedc8;
+}
+
+.nav-links a.active {
+    font-weight: bold;
+
+    border-bottom: 2px solid white;
+
+    padding-bottom: 5px;
+}
+
+
+/* ======================================
+   NAVBAR LOGOUT BUTTON
+====================================== */
+
+.logout-btn {
+    border: none;
+
+    background: white;
+
+    color: #2e7d32;
+
+    padding: 10px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e8f5e9;
+}
+
+
+/* ======================================
+   PROFILE CONTAINER
+====================================== */
+
+.profile-container {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* ======================================
+   PROFILE CARD
+====================================== */
+
+.profile-card {
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ======================================
+   PROFILE HEADER
+====================================== */
+
+.profile-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-icon {
+    width: 70px;
+
+    height: 70px;
+
+    min-width: 70px;
+
+    border-radius: 50%;
+
+    background: #e8f5e9;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 35px;
+}
+
+.profile-header h1 {
+    color: #2e7d32;
+
+    margin-bottom: 5px;
+
+    font-size: 28px;
+}
+
+.profile-header p {
+    color: #777;
+
+    font-size: 15px;
+}
+
+
+/* ======================================
+   PROFILE DETAILS
+====================================== */
+
+.profile-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.detail-group {
+    padding: 15px;
+
+    background: #f8faf8;
+
+    border-radius: 8px;
+
+    border-left: 4px solid #2e7d32;
+}
+
+.detail-group label {
+    display: block;
+
+    font-size: 13px;
+
+    color: #777;
+
+    margin-bottom: 6px;
+
+    font-weight: bold;
+}
+
+.detail-group p {
+    font-size: 16px;
+
+    color: #222;
+
+    word-break: break-word;
+
+    line-height: 1.5;
+}
+
+
+/* ======================================
+   EDIT INPUT FIELDS
+====================================== */
+
+.edit-input {
+    display: none;
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-family: Arial, sans-serif;
+
+    color: #222;
+
+    background: white;
+
+    outline: none;
+
+    margin-top: 5px;
+
+    transition: 0.3s;
+}
+
+.edit-input:focus {
+    border-color: #2e7d32;
+
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
+}
+
+textarea.edit-input {
+    resize: vertical;
+
+    min-height: 80px;
+}
+
+#editEmail {
+    background: #eeeeee;
+
+    cursor: not-allowed;
+}
+
+
+/* ======================================
+   PROFILE ACTIONS
+====================================== */
+
+.profile-actions {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn,
+.logout-btn2 {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    min-width: 120px;
+}
+
+
+/* ======================================
+   EDIT PROFILE BUTTON
+====================================== */
+
+.edit-btn {
+    display: block;
+
+    background: #2e7d32;
+
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #256628;
+}
+
+
+/* ======================================
+   SAVE CHANGES BUTTON
+====================================== */
+
+.save-btn {
+    display: none;
+
+    background: #2e7d32;
+
+    color: white;
+}
+
+.save-btn:hover {
+    background: #256628;
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ======================================
+   CANCEL BUTTON
+====================================== */
+
+.cancel-btn {
+    display: none;
+
+    background: #eeeeee;
+
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background: #dddddd;
+}
+
+
+/* ======================================
+   SECOND LOGOUT BUTTON
+====================================== */
+
+.logout-btn2 {
+    display: block;
+
+    background: #eeeeee;
+
+    color: #333;
+}
+
+.logout-btn2:hover {
+    background: #dddddd;
+}
+
+
+/* ======================================
+   RESPONSIVE DESIGN
+====================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo {
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .profile-card {
+        padding: 25px;
+    }
+
+}
+
+
+/* ======================================
+   MOBILE DESIGN
+====================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: auto;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .logout-btn {
+        width: 100%;
+    }
+
+    .profile-container {
+        padding: 25px 15px;
+
+        align-items: flex-start;
+    }
+
+    .profile-card {
+        padding: 22px;
+
+        margin-top: 10px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .profile-header h1 {
+        font-size: 24px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .edit-btn,
+    .save-btn,
+    .cancel-btn,
+    .logout-btn2 {
+        width: 100%;
+    }
+
+}
+
+
+/* ======================================
+   VERY SMALL SCREENS
+====================================== */
+
+@media (max-width: 400px) {
+
+    .profile-card {
+        padding: 18px;
+    }
+
+    .profile-header {
+        margin-bottom: 25px;
+    }
+
+    .profile-icon {
+        width: 60px;
+
+        height: 60px;
+
+        min-width: 60px;
+
+        font-size: 30px;
+    }
+
+    .detail-group {
+        padding: 12px;
+    }
+
+}

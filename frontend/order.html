@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - VEGGES</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../frontend-css/style.css">
+
+    <!-- Order Page CSS -->
+    <link rel="stylesheet" href="../frontend-css/order.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <a href="index.html">VEGGES</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+            <a href="order.html" class="active">My Orders</a>
+            <a href="profile.html">Profile</a>
+        </div>
+
+        <div class="nav-actions">
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         ORDERS SECTION
+    ========================== -->
+    <main class="orders-container">
+
+       <div class="orders-header">
+
+    <div>
+        <h1>My Orders</h1>
+        <p id="ordersSubtitle">View your latest VEGGES order</p>
+    </div>
+
+    <button id="historyBtn" class="history-btn">
+        📋 Order History
+    </button>
+
+</div>
+
+
+        <!-- Loading -->
+        <div id="loadingMessage" class="message-box">
+            <div class="loader"></div>
+            <p>Loading your orders...</p>
+        </div>
+
+
+        <!-- Error -->
+        <div id="errorMessage" class="message-box error-message">
+
+            <p id="errorText">
+                Unable to load your orders.
+            </p>
+
+            <button id="retryBtn">
+                Try Again
+            </button>
+
+        </div>
+
+
+        <!-- Empty Orders -->
+        <div id="emptyOrders" class="message-box empty-orders">
+
+            <div class="empty-icon">
+                🛒
+            </div>
+
+            <h2>No Orders Yet</h2>
+
+            <p>
+                You haven't placed any orders yet.
+            </p>
+
+            <a href="products.html" class="shop-btn">
+                Start Shopping
+            </a>
+
+        </div>
+
+
+        <!-- Orders List -->
+         <div id="historyHeader" class="history-header">
+    <button id="currentOrderBtn" class="current-order-btn">
+        ← Current Order
+    </button>
+
+    <h2>Order History</h2>
+    <p>View all your previous orders</p>
+</div>
+        <div id="ordersList" class="orders-list">
+            <!-- Orders will be inserted here by order.js -->
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div class="footer-section">
+
+                <h3>VEGGES</h3>
+
+                <p>
+                    Fresh groceries delivered to your doorstep.
+                </p>
+
+            </div>
+
+
+            <div class="footer-section">
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="cart.html">Cart</a>
+                <a href="order.html">My Orders</a>
+
+            </div>
+
+
+            <div class="footer-section">
+
+                <h3>Contact</h3>
+
+                <p>Email: support@vegges.com</p>
+                <p>Phone: +91 98765 43210</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 VEGGES. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Order JavaScript -->
+    <script src="../frontend-js/order.js"></script>
+
+</body>
+</html>

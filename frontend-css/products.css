@@ -1,0 +1,264 @@
+/* ======================================
+   VEGGES PRODUCTS PAGE
+====================================== */
+
+
+.products-section {
+
+    padding: 60px 50px;
+
+    background: #f8f9f8;
+
+    min-height: 80vh;
+
+}
+
+
+.products-section h1 {
+
+    text-align: center;
+
+    font-size: 40px;
+
+    color: #2E7D32;
+
+    margin-bottom: 40px;
+
+}
+
+
+/* ======================================
+   PRODUCT CONTAINER
+====================================== */
+
+.product-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 35px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+
+/* ======================================
+   PRODUCT CARD
+====================================== */
+
+.product-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.3s ease;
+
+}
+
+
+.product-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+
+}
+
+
+/* ======================================
+   PRODUCT IMAGE
+====================================== */
+
+.product-card img {
+
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    margin: 0 auto 20px;
+
+}
+
+
+/* ======================================
+   PRODUCT NAME
+====================================== */
+
+.product-card h3 {
+
+    margin-top: 20px;
+
+    color: #2E7D32;
+
+    font-size: 22px;
+
+}
+
+
+/* ======================================
+   PRICE & CATEGORY
+====================================== */
+
+.product-card p {
+
+    margin: 10px 0;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+/* ======================================
+   ADD TO CART BUTTON
+====================================== */
+
+.product-card button {
+
+    background: #2E7D32;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.3s ease;
+
+}
+
+
+.product-card button:hover {
+
+    background: #1B5E20;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ======================================
+   CART NOTIFICATION
+====================================== */
+
+.cart-notification {
+
+    position: fixed;
+
+    top: 90px;
+
+    right: 25px;
+
+    background: #2E7D32;
+
+    color: white;
+
+    padding: 14px 22px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s;
+
+}
+
+
+/* Show notification */
+
+.cart-notification.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 1000px) {
+
+    .product-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .products-section {
+
+        padding: 40px 20px;
+
+    }
+
+
+    .products-section h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .product-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

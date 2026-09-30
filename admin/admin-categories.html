@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Categories - VEGGES Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-categories.css"
+    >
+
+</head>
+
+<body>
+
+
+    <div class="admin-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🥬
+                </div>
+
+                <div>
+
+                    <h2>VEGGES</h2>
+
+                    <span>Admin Panel</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NAVIGATION
+            ========================== -->
+
+            <nav class="sidebar-nav">
+
+
+                <!-- DASHBOARD -->
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">📊</span>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+
+                <!-- PRODUCTS -->
+
+                <a
+                    href="admin-products.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">📦</span>
+
+                    <span>Products</span>
+
+                </a>
+
+
+                <!-- CATEGORIES -->
+
+                <a
+                    href="admin-categories.html"
+                    class="nav-item active"
+                >
+
+                    <span class="nav-icon">🗂️</span>
+
+                    <span>Categories</span>
+
+                </a>
+
+
+                <!-- ORDERS -->
+
+                <a
+                    href="admin-orders.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">🛒</span>
+
+                    <span>Orders</span>
+
+                </a>
+
+
+                <!-- CUSTOMERS -->
+
+                <a
+                    href="admin-users.html"
+                    class="nav-item"
+                    id="customersBtn"
+                >
+
+                    <span class="nav-icon">👥</span>
+
+                    <span>Customers</span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- =========================
+                 SIDEBAR BOTTOM
+            ========================== -->
+<div class="sidebar-bottom">
+
+    <a href="admin-dashboard.html" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span>Dashboard</span>
+    </a>
+
+    <a href="#" class="nav-item logout-item" id="logoutBtn">
+        <span class="nav-icon">🚪</span>
+        <span>Logout</span>
+    </a>
+
+</div>
+
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <header class="topbar">
+
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                >
+                    ☰
+                </button>
+
+
+                <!-- PAGE TITLE -->
+
+                <div class="topbar-title">
+
+                    <h1>Categories</h1>
+
+                    <p>
+                        Manage your product categories.
+                    </p>
+
+                </div>
+
+
+                <!-- ADMIN INFO -->
+
+                <div class="topbar-right">
+
+                    <div class="admin-info">
+
+                        <div class="admin-avatar">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <strong id="topAdminName">
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </header>
+
+
+            <!-- =========================
+                 PAGE CONTENT
+            ========================== -->
+
+            <section class="categories-content">
+
+
+                <!-- =========================
+                     PAGE HEADER
+                ========================== -->
+
+                <div class="page-heading">
+
+
+                    <div>
+
+                        <h2>
+                            Category Management
+                        </h2>
+
+                        <p>
+                            Add, edit and manage your product categories.
+                        </p>
+
+                    </div>
+
+
+                    <!-- ADD CATEGORY BUTTON -->
+
+                    <button
+                        class="add-category-btn"
+                        id="addCategoryBtn"
+                    >
+                        + Add Category
+                    </button>
+
+
+                </div>
+
+
+                <!-- =========================
+                     CATEGORY TABLE
+                ========================== -->
+
+                <div class="section-card">
+
+
+                    <div class="table-container">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>#</th>
+
+                                    <th>
+                                        Category Name
+                                    </th>
+
+                                    <th>
+                                        Description
+                                    </th>
+
+                                    <th>
+                                        Created
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="categoriesTable"
+                            >
+
+                                <tr>
+
+                                    <td
+                                        colspan="5"
+                                        class="no-data"
+                                    >
+
+                                        Loading categories...
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- =========================
+         CATEGORY MODAL
+    ========================== -->
+
+    <div
+        class="modal-overlay"
+        id="categoryModal"
+    >
+
+
+        <div class="category-modal">
+
+
+            <!-- =========================
+                 MODAL HEADER
+            ========================== -->
+
+            <div class="modal-header">
+
+
+                <h2 id="modalTitle">
+                    Add Category
+                </h2>
+
+
+                <button
+                    class="close-modal"
+                    id="closeModalBtn"
+                >
+                    ×
+                </button>
+
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORY FORM
+            ========================== -->
+
+            <form
+                id="categoryForm"
+            >
+
+
+                <!-- HIDDEN CATEGORY ID -->
+
+                <input
+                    type="hidden"
+                    id="categoryId"
+                >
+
+
+                <!-- =========================
+                     CATEGORY NAME
+                ========================== -->
+
+                <div class="form-group">
+
+
+                    <label for="categoryName">
+                        Category Name
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="categoryName"
+                        placeholder="Enter category name"
+                        required
+                    >
+
+
+                </div>
+
+
+                <!-- =========================
+                     DESCRIPTION
+                ========================== -->
+
+                <div class="form-group">
+
+
+                    <label for="categoryDescription">
+                        Description
+                    </label>
+
+
+                    <textarea
+                        id="categoryDescription"
+                        placeholder="Enter category description"
+                        rows="4"
+                    ></textarea>
+
+
+                </div>
+
+
+                <!-- =========================
+                     CATEGORY IMAGE
+                ========================== -->
+
+                <div class="form-group">
+
+
+                    <label for="categoryImage">
+                        Category Image
+                    </label>
+
+
+                    <input
+                        type="file"
+                        id="categoryImage"
+                        name="image"
+                        accept="image/*"
+                    >
+
+
+                </div>
+
+
+                <!-- =========================
+                     MODAL BUTTONS
+                ========================== -->
+
+                <div class="modal-actions">
+
+
+                    <!-- CANCEL -->
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <!-- SAVE -->
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Save Category
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/admin-categories.js"></script>
+
+
+</body>
+
+</html>

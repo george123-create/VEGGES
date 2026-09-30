@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VEGGES - Payment</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../frontend-css/style.css">
+    <link rel="stylesheet" href="../frontend-css/navbar.css">
+    <link rel="stylesheet" href="../frontend-css/footer.css">
+    <link rel="stylesheet" href="../frontend-css/payment.css">
+
+</head>
+
+
+<body>
+
+<!-- Navbar -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            VEGGES 🥦
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="cart.html">
+                    Cart 🛒
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- Payment Section -->
+
+<section class="payment-section">
+
+    <div class="payment-container">
+
+        <h1>
+            Payment 💳
+        </h1>
+
+
+        <!-- Order Summary -->
+
+        <div class="payment-summary">
+
+            <h2>
+                Order Summary
+            </h2>
+
+            <p>
+                Total Amount:
+                <span id="paymentAmount">
+                    ₹0
+                </span>
+            </p>
+
+        </div>
+
+
+        <!-- Payment Options -->
+
+        <div class="payment-options">
+
+            <h2>
+                Choose Payment Method
+            </h2>
+
+
+            <!-- COD -->
+
+            <label class="payment-card">
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="COD"
+                    checked
+                >
+
+                Cash On Delivery
+
+            </label>
+
+
+            <!-- Online -->
+
+            <label class="payment-card">
+
+                <input
+                    type="radio"
+                    name="payment"
+                    value="ONLINE"
+                >
+
+                Online Payment
+
+            </label>
+
+
+            <!-- Confirm Button -->
+
+            <button
+                id="confirmPayment"
+                type="button"
+            >
+                Confirm Order
+            </button>
+
+
+            <!-- Loading -->
+
+            <p
+                id="paymentMessage"
+                style="display: none;"
+            >
+                Processing...
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 VEGGES. Fresh vegetables delivered.
+    </p>
+
+</footer>
+
+
+<!-- Razorpay Checkout -->
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+<!-- VEGGES Payment JS -->
+
+<script src="../frontend-js/payment.js"></script>
+
+</body>
+
+</html>

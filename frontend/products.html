@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VEGGES - Products</title>
+
+<!-- CSS -->
+<link rel="stylesheet" href="../frontend-css/style.css">
+<link rel="stylesheet" href="../frontend-css/navbar.css">
+<link rel="stylesheet" href="../frontend-css/footer.css">
+<link rel="stylesheet" href="../frontend-css/products.css">
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<header>
+
+
+<nav class="navbar">
+
+    <!-- Logo -->
+
+    <div class="logo">
+        🌿 <span>VEGGES</span>
+    </div>
+
+
+    <!-- Navigation -->
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+
+        <li>
+            <a href="products.html" class="active">
+                Products
+            </a>
+        </li>
+
+
+        <li>
+            <a href="abouts.html">
+                About
+            </a>
+        </li>
+
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+
+        <!-- LOGIN -->
+
+        <li>
+            <a href="login.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                Login
+
+            </a>
+        </li>
+
+
+        <!-- CART -->
+
+        <li>
+            <a href="cart.html" title="Shopping Cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Cart
+
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+<!-- =========================
+     PRODUCT SECTION
+========================== -->
+
+<section class="products-section">
+
+
+<h1 id="pageTitle">
+    All Products
+</h1>
+
+
+<!-- =========================
+     CATEGORY FILTER
+========================== -->
+
+<!-- CATEGORY FILTER HIDDEN -->
+<div
+    class="category-filter"
+    id="categoryFilter"
+    style="display: none;"
+></div>
+
+
+<div
+    class="product-container"
+    id="productContainer"
+>
+
+    <!-- Products will be loaded using JavaScript -->
+
+</div>
+
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+<p>
+    © 2026 VEGGES. Fresh vegetables delivered.
+</p>
+
+</footer>
+
+<!-- =========================
+     CART NOTIFICATION
+========================== -->
+
+<div
+    id="cartNotification"
+    class="cart-notification"
+>
+    🛒 Product added to cart!
+</div>
+
+<!-- JavaScript -->
+
+<script src="../frontend-js/products.js"></script>
+
+</body>
+
+</html>

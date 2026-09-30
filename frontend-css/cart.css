@@ -1,0 +1,273 @@
+/* ======================================
+   VEGGES CART PAGE
+====================================== */
+
+
+.cart-section{
+
+    min-height:80vh;
+
+    padding:60px 50px;
+
+    background:#f8f9f8;
+
+}
+
+
+
+.cart-section h1{
+
+    text-align:center;
+
+    color:#2E7D32;
+
+    font-size:40px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* Cart Container */
+
+.cart-container{
+
+    max-width:1000px;
+
+    margin:auto;
+
+}
+
+
+
+/* Cart Item */
+
+.cart-item{
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+
+
+/* Image */
+
+.cart-item img{
+
+    width:100px;
+
+    height:100px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+}
+
+
+
+/* Product Info */
+
+.cart-info{
+
+    flex:1;
+
+    margin-left:25px;
+
+}
+
+
+
+.cart-info h3{
+
+    color:#2E7D32;
+
+    font-size:22px;
+
+}
+
+
+
+.cart-info p{
+
+    color:#555;
+
+    margin-top:8px;
+
+}
+
+
+
+/* Quantity */
+
+.quantity-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.quantity-box button{
+
+    width:35px;
+
+    height:35px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2E7D32;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+
+.quantity-box span{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
+
+/* Remove Button */
+
+.remove-btn{
+
+    background:#d32f2f;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+.remove-btn:hover{
+
+    background:#b71c1c;
+
+}
+
+
+
+/* Summary */
+
+.cart-summary{
+
+    max-width:1000px;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:right;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+}
+
+
+
+.cart-summary h2{
+
+    color:#333;
+
+    margin-bottom:20px;
+
+}
+
+
+
+#checkoutBtn{
+
+    background:#2E7D32;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+
+#checkoutBtn:hover{
+
+    background:#1B5E20;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:700px){
+
+
+    .cart-item{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        text-align:center;
+
+    }
+
+
+    .cart-info{
+
+        margin-left:0;
+
+    }
+
+
+}

@@ -1,0 +1,231 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VEGGES - My Profile</title>
+
+    <link rel="stylesheet" href="../frontend-css/profile.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            VEGGES
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="products.html">Products</a>
+            </li>
+
+            <li>
+                <a href="cart.html">Cart</a>
+            </li>
+
+            <li>
+                <a href="order.html">My Orders</a>
+            </li>
+
+            <li>
+                <a href="profile.html" class="active">Profile</a>
+            </li>
+
+        </ul>
+
+        <button id="logoutBtn" class="logout-btn">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <!-- =========================
+         PROFILE SECTION
+    ========================== -->
+
+    <main class="profile-container">
+
+        <div class="profile-card">
+
+
+            <!-- =========================
+                 PROFILE HEADER
+            ========================== -->
+
+            <div class="profile-header">
+
+                <div class="profile-icon">
+                    👤
+                </div>
+
+                <div>
+
+                    <h1>My Profile</h1>
+
+                    <p>
+                        Manage your VEGGES account
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 USER INFORMATION
+            ========================== -->
+
+            <div class="profile-details">
+
+
+                <!-- NAME -->
+
+                <div class="detail-group">
+
+                    <label>Name</label>
+
+                    <p id="userName">
+                        Loading...
+                    </p>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        class="edit-input"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="detail-group">
+
+                    <label>Email</label>
+
+                    <p id="userEmail">
+                        Loading...
+                    </p>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        class="edit-input"
+                        readonly
+                    >
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="detail-group">
+
+                    <label>Phone</label>
+
+                    <p id="userPhone">
+                        Loading...
+                    </p>
+
+                    <input
+                        type="text"
+                        id="editPhone"
+                        class="edit-input"
+                        placeholder="Enter your phone number"
+                    >
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="detail-group">
+
+                    <label>Address</label>
+
+                    <p id="userAddress">
+                        Loading...
+                    </p>
+
+                    <textarea
+                        id="editAddress"
+                        class="edit-input"
+                        placeholder="Enter your address"
+                        rows="3"
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PROFILE ACTIONS
+            ========================== -->
+
+            <div class="profile-actions">
+
+                <button
+                    id="editProfileBtn"
+                    class="edit-btn"
+                >
+                    Edit Profile
+                </button>
+
+                <button
+                    id="saveProfileBtn"
+                    class="save-btn"
+                >
+                    Save Changes
+                </button>
+
+                <button
+                    id="cancelEditBtn"
+                    class="cancel-btn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    id="logoutBtn2"
+                    class="logout-btn2"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         PROFILE JAVASCRIPT
+    ========================== -->
+
+    <script src="../frontend-js/profile.js"></script>
+
+</body>
+
+</html>
+```

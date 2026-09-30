@@ -1,0 +1,233 @@
+/* ======================================
+   VEGGES CHECKOUT PAGE
+====================================== */
+
+
+.checkout-section{
+
+    min-height:80vh;
+
+    padding:60px 50px;
+
+    background:#f8f9f8;
+
+}
+
+
+
+.checkout-container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 400px;
+
+    gap:40px;
+
+}
+
+
+
+/* Checkout Form */
+
+.checkout-form{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+
+.checkout-form h1{
+
+    color:#2E7D32;
+
+    margin-bottom:30px;
+
+    font-size:32px;
+
+}
+
+
+
+.checkout-form label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+
+
+.checkout-form input,
+.checkout-form textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    border:2px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+
+
+.checkout-form textarea{
+
+    height:120px;
+
+    resize:none;
+
+}
+
+
+
+.checkout-form input:focus,
+.checkout-form textarea:focus{
+
+    border-color:#2E7D32;
+
+}
+
+
+
+
+.checkout-form button{
+
+    width:100%;
+
+    padding:16px;
+
+    background:#2E7D32;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+.checkout-form button:hover{
+
+    background:#1B5E20;
+
+}
+
+
+
+
+/* Order Summary */
+
+
+.order-summary{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    height:max-content;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+
+.order-summary h2{
+
+    color:#2E7D32;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.checkout-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.checkout-item img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+
+
+.order-summary h3{
+
+    margin-top:25px;
+
+    color:#333;
+
+}
+
+
+
+
+/* Responsive */
+
+@media(max-width:900px){
+
+
+    .checkout-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

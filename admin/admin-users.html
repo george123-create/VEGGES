@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Customers - VEGGES Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-users.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="admin-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🥬
+                </div>
+
+                <div>
+
+                    <h2>VEGGES</h2>
+
+                    <span>
+                        Admin Panel
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NAVIGATION
+            ========================== -->
+
+            <nav class="sidebar-nav">
+
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-products.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        📦
+                    </span>
+
+                    <span>
+                        Products
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-categories.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        🗂️
+                    </span>
+
+                    <span>
+                        Categories
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-orders.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        🛒
+                    </span>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="admin-users.html"
+                    class="nav-item active"
+                    id="customersBtn"
+                >
+
+                    <span class="nav-icon">
+                        👥
+                    </span>
+
+                    <span>
+                        Customers
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- =========================
+                 SIDEBAR BOTTOM
+            ========================== -->
+
+            <div class="sidebar-bottom">
+
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        🏠
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="nav-item logout-item"
+                    id="logoutBtn"
+                >
+
+                    <span class="nav-icon">
+                        🚪
+                    </span>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <header class="topbar">
+
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    type="button"
+                >
+                    ☰
+                </button>
+
+
+                <div class="topbar-title">
+
+                    <h1>
+                        Customers
+                    </h1>
+
+                    <p>
+                        Manage your VEGGES customers.
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+
+                    <div class="admin-info">
+
+
+                        <div class="admin-avatar">
+                            👤
+                        </div>
+
+
+                        <div>
+
+                            <strong id="adminName">
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =========================
+                 CUSTOMERS CONTENT
+            ========================== -->
+
+            <section class="customers-content">
+
+
+                <!-- =========================
+                     PAGE HEADER
+                ========================== -->
+
+                <div class="page-heading">
+
+
+                    <div>
+
+                        <h2>
+                            Customer Management
+                        </h2>
+
+                        <p>
+                            View and manage registered VEGGES customers.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =========================
+                     CUSTOMER CONTROLS
+                ========================== -->
+
+                <div class="customer-controls">
+
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="searchCustomer"
+                            placeholder="Search customers..."
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =========================
+                     CUSTOMER MESSAGE
+                ========================== -->
+
+                <div
+                    id="customerMessage"
+                    class="customer-message"
+                ></div>
+
+
+
+                <!-- =========================
+                     CUSTOMER TABLE
+                ========================== -->
+
+                <div class="section-card">
+
+
+                    <div class="table-container">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        #
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Address
+                                    </th>
+
+                                    <th>
+                                        Joined
+                                    </th>
+
+                                    <th>
+                                        Actions
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customersTableBody">
+
+
+                                <tr>
+
+                                    <td
+                                        colspan="7"
+                                        class="no-data"
+                                    >
+                                        Loading customers...
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         CUSTOMER DETAILS MODAL
+    ========================== -->
+
+    <div
+        class="modal-overlay"
+        id="customerModal"
+    >
+
+
+        <div class="customer-modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="modal-header">
+
+
+                <h2>
+                    Customer Details
+                </h2>
+
+
+                <button
+                    class="close-modal"
+                    id="closeModalBtn"
+                    type="button"
+                >
+                    ×
+                </button>
+
+
+            </div>
+
+
+
+            <!-- CUSTOMER DETAILS -->
+
+            <div class="customer-details">
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        Name
+                    </strong>
+
+                    <span id="detailName">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <span id="detailEmail">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <span id="detailPhone">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        Address
+                    </strong>
+
+                    <span id="detailAddress">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        Account Type
+                    </strong>
+
+                    <span id="detailRole">
+                        Customer
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        Joined
+                    </strong>
+
+                    <span id="detailJoined">
+                        -
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- MODAL ACTION -->
+
+            <div class="modal-actions">
+
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    id="closeCustomerBtn"
+                >
+                    Close
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/admin-users.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VEGGES - Admin Dashboard</title>
+
+    <!-- Admin Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="css/admin-dashboard.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🥬
+                </div>
+
+                <div>
+
+                    <h2>VEGGES</h2>
+
+                    <span>Admin Panel</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NAVIGATION
+            ========================== -->
+
+            <nav class="sidebar-nav">
+
+
+                <!-- DASHBOARD -->
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item active"
+                >
+
+                    <span class="nav-icon">
+                        📊
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- PRODUCTS -->
+
+                <a
+                    href="admin-products.html"
+                    class="nav-item"
+                    id="productsBtn"
+                >
+
+                    <span class="nav-icon">
+                        📦
+                    </span>
+
+                    <span>
+                        Products
+                    </span>
+
+                </a>
+
+
+                <!-- CATEGORIES -->
+
+                <a
+                    href="admin-categories.html"
+                    class="nav-item"
+                >
+
+                    <span class="nav-icon">
+                        🗂️
+                    </span>
+
+                    <span>
+                        Categories
+                    </span>
+
+                </a>
+
+
+                <!-- ORDERS -->
+
+                <a
+                    href="admin-orders.html"
+                    class="nav-item"
+                    id="ordersBtn"
+                >
+
+                    <span class="nav-icon">
+                        🛒
+                    </span>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+
+
+                <!-- CUSTOMERS -->
+
+                <a
+                    href="admin-users.html"
+                    class="nav-item"
+                    id="customersBtn"
+                >
+
+                    <span class="nav-icon">
+                        👥
+                    </span>
+
+                    <span>
+                        Customers
+                    </span>
+
+                </a>
+
+
+            </nav>
+
+
+            <!-- =========================
+                 SIDEBAR BOTTOM
+            ========================== -->
+
+            <div class="sidebar-bottom">
+
+
+                <!-- ADMIN PROFILE -->
+
+                <a
+                    href="admin-profile.html"
+                    class="nav-item"
+                    id="adminProfileBtn"
+                >
+
+                    <span class="nav-icon">
+                        👤
+                    </span>
+
+                    <span>
+                        Admin Profile
+                    </span>
+
+                </a>
+
+
+                <!-- LOGOUT -->
+
+                <a
+                    href="#"
+                    class="nav-item logout-item"
+                    id="logoutBtn"
+                >
+
+                    <span class="nav-icon">
+                        🚪
+                    </span>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- =========================
+                 TOP BAR
+            ========================== -->
+
+            <header class="topbar">
+
+
+                <!-- MOBILE MENU -->
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                >
+                    ☰
+                </button>
+
+
+                <!-- TITLE -->
+
+                <div class="topbar-title">
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+
+                        Welcome back,
+
+                        <span id="adminName">
+                            Admin
+                        </span>
+
+                    </p>
+
+                </div>
+
+
+                <!-- ADMIN INFO -->
+
+                <div class="topbar-right">
+
+                    <div class="admin-info">
+
+
+                        <div class="admin-avatar">
+                            👤
+                        </div>
+
+
+                        <div>
+
+                            <strong id="topAdminName">
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </header>
+
+
+            <!-- =========================
+                 DASHBOARD CONTENT
+            ========================== -->
+
+            <section class="dashboard-content">
+
+
+                <!-- PAGE HEADING -->
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            Overview
+                        </h2>
+
+                        <p>
+                            Here's what's happening with your VEGGES store.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     STATISTICS
+                ========================== -->
+
+                <div class="stats-grid">
+
+
+                    <!-- TOTAL PRODUCTS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon products-icon">
+                            📦
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Products
+                            </span>
+
+                            <h3 id="totalProducts">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL ORDERS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orders-icon">
+                            🛒
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Orders
+                            </span>
+
+                            <h3 id="totalOrders">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL CUSTOMERS -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon customers-icon">
+                            👥
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Customers
+                            </span>
+
+                            <h3 id="totalCustomers">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TOTAL REVENUE -->
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon revenue-icon">
+                            💰
+                        </div>
+
+                        <div class="stat-info">
+
+                            <span>
+                                Total Revenue
+                            </span>
+
+                            <h3 id="totalRevenue">
+                                ₹0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =========================
+                     QUICK ACTIONS
+                ========================== -->
+
+                <div class="section-card">
+
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                Quick Actions
+                            </h2>
+
+                            <p>
+                                Manage your store quickly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+
+                        <!-- PRODUCTS -->
+
+                        <button
+                            class="quick-action-btn"
+                            id="manageProductsBtn"
+                        >
+
+                            <span>
+                                📦
+                            </span>
+
+                            <strong>
+                                Manage Products
+                            </strong>
+
+                            <small>
+                                Add, edit or delete products
+                            </small>
+
+                        </button>
+
+
+                        <!-- CATEGORIES -->
+
+                        <button
+                            class="quick-action-btn"
+                            id="manageCategoriesBtn"
+                        >
+
+                            <span>
+                                🗂️
+                            </span>
+
+                            <strong>
+                                Manage Categories
+                            </strong>
+
+                            <small>
+                                Manage product categories
+                            </small>
+
+                        </button>
+
+
+                        <!-- ORDERS -->
+
+                        <button
+                            class="quick-action-btn"
+                            id="manageOrdersBtn"
+                        >
+
+                            <span>
+                                🛒
+                            </span>
+
+                            <strong>
+                                Manage Orders
+                            </strong>
+
+                            <small>
+                                View and update orders
+                            </small>
+
+                        </button>
+
+
+                        <!-- CUSTOMERS -->
+
+                        <button
+                            class="quick-action-btn"
+                            id="manageCustomersBtn"
+                        >
+
+                            <span>
+                                👥
+                            </span>
+
+                            <strong>
+                                View Customers
+                            </strong>
+
+                            <small>
+                                Manage customer accounts
+                            </small>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =========================
+                     RECENT ORDERS
+                ========================== -->
+
+                <div class="section-card">
+
+
+                    <div class="section-header">
+
+
+                        <div>
+
+                            <h2>
+                                Recent Orders
+                            </h2>
+
+                            <p>
+                                Latest orders from your customers.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="view-all-btn"
+                            id="viewAllOrdersBtn"
+                        >
+                            View All
+                        </button>
+
+
+                    </div>
+
+
+                    <div class="table-container">
+
+
+                        <table>
+
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Order ID
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Payment
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody
+                                id="recentOrdersTable"
+                            >
+
+                                <tr>
+
+                                    <td
+                                        colspan="5"
+                                        class="no-data"
+                                    >
+                                        No orders available
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <!-- =========================
+         DASHBOARD JAVASCRIPT
+    ========================== -->
+
+    <script src="js/admin-dashboard.js"></script>
+
+
+</body>
+
+</html>

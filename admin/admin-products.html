@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Products - VEGGES Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-products.css"
+    >
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-logo">
+
+                <div class="logo-icon">
+                    🥬
+                </div>
+
+                <div>
+                    <h2>VEGGES</h2>
+                    <span>Admin Panel</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="admin-products.html"
+                    class="nav-item active"
+                >
+                    <span class="nav-icon">📦</span>
+                    <span>Products</span>
+                </a>
+
+
+                <a
+                    href="admin-categories.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">🗂️</span>
+                    <span>Categories</span>
+                </a>
+
+
+                <a
+                    href="admin-orders.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">🛒</span>
+                    <span>Orders</span>
+                </a>
+
+
+                <a
+    href="admin-users.html"
+    class="nav-item"
+    id="customersBtn"
+>
+    <span class="nav-icon">👥</span>
+    <span>Customers</span>
+</a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="admin-dashboard.html"
+                    class="nav-item"
+                >
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+
+
+                <a
+                    href="#"
+                    class="nav-item logout-item"
+                    id="logoutBtn"
+                >
+                    <span class="nav-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <button
+                    class="menu-btn"
+                    id="menuBtn"
+                    type="button"
+                >
+                    ☰
+                </button>
+
+
+                <div class="topbar-title">
+
+                    <h1>Products</h1>
+
+                    <p>
+                        Manage your VEGGES products.
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="admin-info">
+
+                        <div class="admin-avatar">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <strong id="adminName">
+                                Admin
+                            </strong>
+
+                            <span>
+                                Administrator
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =========================
+                 PRODUCTS CONTENT
+            ========================== -->
+
+            <section class="products-content">
+
+
+                <!-- PAGE HEADER -->
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>Product Management</h2>
+
+                        <p>
+                            Add, edit and manage your products.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="add-product-btn"
+                        id="addProductBtn"
+                        type="button"
+                    >
+                        + Add Product
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     SEARCH / FILTER
+                ========================== -->
+
+                <div class="product-controls">
+
+                    <div class="search-box">
+
+                        <input
+                            type="text"
+                            id="searchProduct"
+                            placeholder="Search products..."
+                        >
+
+                    </div>
+
+
+                    <div class="filter-box">
+
+                        <select id="categoryFilter">
+
+                            <option value="">
+                                All Categories
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     MESSAGE
+                ========================== -->
+
+                <div
+                    id="productMessage"
+                    class="product-message"
+                ></div>
+
+
+                <!-- =========================
+                     PRODUCT TABLE
+                ========================== -->
+
+                <div class="section-card">
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Image</th>
+
+                                    <th>Product</th>
+
+                                    <th>Category</th>
+
+                                    <th>Price</th>
+
+                                    <th>Stock</th>
+
+                                    <th>Status</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="productsTableBody">
+
+                                <tr>
+
+                                    <td
+                                        colspan="7"
+                                        class="no-data"
+                                    >
+                                        Loading products...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         PRODUCT MODAL
+    ========================== -->
+
+    <div
+        class="modal-overlay"
+        id="productModal"
+    >
+
+        <div class="product-modal">
+
+
+            <div class="modal-header">
+
+                <h2 id="modalTitle">
+                    Add Product
+                </h2>
+
+
+                <button
+                    class="close-modal"
+                    id="closeModalBtn"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="productForm">
+
+
+                <!-- PRODUCT NAME -->
+
+                <div class="form-group">
+
+                    <label for="productName">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        name="name"
+                        placeholder="Enter product name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PRICE -->
+
+                <div class="form-group">
+
+                    <label for="productPrice">
+                        Price
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        name="price"
+                        placeholder="Enter price"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- STOCK -->
+
+                <div class="form-group">
+
+                    <label for="productStock">
+                        Stock
+                    </label>
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        name="stock"
+                        placeholder="Enter stock quantity"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="productCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="productCategory"
+                        name="category"
+                        required
+                    >
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- IMAGE -->
+
+                <div class="form-group">
+
+                    <label for="productImage">
+                        Image URL
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productImage"
+                        name="image"
+                        placeholder="Enter image URL"
+                    >
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="productDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="productDescription"
+                        name="description"
+                        placeholder="Enter product description"
+                        rows="4"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                        id="saveProductBtn"
+                    >
+                        Save Product
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/admin-products.js"></script>
+
+</body>
+
+</html>

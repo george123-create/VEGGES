@@ -1,0 +1,176 @@
+/* ======================================
+   VEGGES ORDER SUCCESS PAGE
+====================================== */
+
+
+.success-section{
+
+    min-height:80vh;
+
+    padding:60px 30px;
+
+    background:#f8f9f8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.success-container{
+
+    background:white;
+
+    max-width:600px;
+
+    width:100%;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+
+}
+
+
+
+.success-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:auto;
+
+    background:#2E7D32;
+
+    color:white;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:45px;
+
+    font-weight:bold;
+
+}
+
+
+
+.success-container h1{
+
+    color:#2E7D32;
+
+    margin:25px 0 15px;
+
+}
+
+
+
+.success-container p{
+
+    color:#555;
+
+}
+
+
+
+.order-details{
+
+    margin-top:30px;
+
+    background:#f1f8f1;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:left;
+
+}
+
+
+
+.order-details h2{
+
+    color:#2E7D32;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.order-details p{
+
+    margin:10px 0;
+
+    font-size:16px;
+
+}
+
+
+
+.success-buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:20px;
+
+    justify-content:center;
+
+}
+
+
+
+.success-buttons button{
+
+    padding:14px 25px;
+
+    background:#2E7D32;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+
+
+.success-buttons button:hover{
+
+    background:#1B5E20;
+
+}
+
+
+
+@media(max-width:600px){
+
+    .success-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
