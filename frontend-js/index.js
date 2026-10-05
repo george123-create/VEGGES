@@ -3,8 +3,8 @@
 // LOAD CATEGORIES FROM MONGODB
 // ======================================
 
-const API_URL = "http://localhost:5000/api";
-const BACKEND_URL = "http://localhost:5000";
+const API_URL = "https://vegges.onrender.com/api";
+const BACKEND_URL = "https://vegges.onrender.com";
 
 const categoryContainer =
     document.getElementById("categoryContainer");

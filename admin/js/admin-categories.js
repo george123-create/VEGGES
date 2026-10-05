@@ -7,8 +7,7 @@
 // API URL
 // =========================
 
-const API_URL =
-    "http://localhost:5000/api/admin/categories";
+    const API_URL = "https://vegges.onrender.com/api";
 
 
 // =========================

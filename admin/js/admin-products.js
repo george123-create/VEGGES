@@ -7,11 +7,10 @@
 // API URLs
 // =========================
 
-const PRODUCT_API_URL =
-    "http://localhost:5000/api/products";
+const API_URL = "https://vegges.onrender.com/api";
 
 const CATEGORY_API_URL =
-    "http://localhost:5000/api/admin/categories";
+    "https://vegges.onrender.com/api/admin/categories";
 
 
 // =========================

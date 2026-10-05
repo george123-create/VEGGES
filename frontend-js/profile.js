@@ -4,6 +4,10 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
 
+    // ======================================
+    // GET LOGIN TOKEN
+    // ======================================
+
     const token = localStorage.getItem("token");
 
     // ======================================
@@ -97,7 +101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
 
             const response = await fetch(
-                "http://localhost:5000/api/users/profile",
+                `${API_URL}/users/profile`,
                 {
                     method: "GET",
 
@@ -111,6 +115,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             console.log("Profile API response:", data);
 
+
+            // ======================================
+            // CHECK RESPONSE
+            // ======================================
 
             if (!response.ok || !data.success) {
 
@@ -130,6 +138,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
+
+            // ======================================
+            // GET USER DATA
+            // ======================================
 
             const user = data.user;
 
@@ -168,14 +180,20 @@ document.addEventListener("DOMContentLoaded", async () => {
                 user.address || "";
 
 
-            // Save latest user information
+            // ======================================
+            // SAVE USER TO LOCAL STORAGE
+            // ======================================
+
             localStorage.setItem(
                 "user",
                 JSON.stringify(user)
             );
 
 
-            // Start in normal view
+            // ======================================
+            // START IN NORMAL VIEW
+            // ======================================
+
             setEditMode(false);
 
         } catch (error) {
@@ -196,191 +214,222 @@ document.addEventListener("DOMContentLoaded", async () => {
     // EDIT PROFILE
     // ======================================
 
-    editProfileBtn.addEventListener(
-        "click",
-        () => {
+    if (editProfileBtn) {
 
-            setEditMode(true);
+        editProfileBtn.addEventListener(
+            "click",
+            () => {
 
-            editName.focus();
-        }
-    );
+                setEditMode(true);
+
+                editName.focus();
+            }
+        );
+    }
 
 
     // ======================================
     // CANCEL EDIT
     // ======================================
 
-    cancelEditBtn.addEventListener(
-        "click",
-        () => {
+    if (cancelEditBtn) {
 
-            setEditMode(false);
+        cancelEditBtn.addEventListener(
+            "click",
+            () => {
 
-            loadProfile();
-        }
-    );
+                setEditMode(false);
+
+                loadProfile();
+            }
+        );
+    }
 
 
     // ======================================
     // SAVE PROFILE
     // ======================================
 
-    saveProfileBtn.addEventListener(
-        "click",
-        async () => {
+    if (saveProfileBtn) {
 
-            const name =
-                editName.value.trim();
+        saveProfileBtn.addEventListener(
+            "click",
+            async () => {
 
-            const phone =
-                editPhone.value.trim();
+                const name =
+                    editName.value.trim();
 
-            const address =
-                editAddress.value.trim();
+                const phone =
+                    editPhone.value.trim();
 
-
-            // Check name
-            if (!name) {
-
-                alert("Name cannot be empty.");
-
-                editName.focus();
-
-                return;
-            }
+                const address =
+                    editAddress.value.trim();
 
 
-            // Check phone
-            if (!phone) {
+                // ======================================
+                // CHECK NAME
+                // ======================================
 
-                alert("Phone number cannot be empty.");
+                if (!name) {
 
-                editPhone.focus();
+                    alert("Name cannot be empty.");
 
-                return;
-            }
-
-
-            // Check address
-            if (!address) {
-
-                alert("Address cannot be empty.");
-
-                editAddress.focus();
-
-                return;
-            }
-
-
-            try {
-
-                saveProfileBtn.disabled = true;
-
-                saveProfileBtn.textContent =
-                    "Saving...";
-
-
-                const response = await fetch(
-                    "http://localhost:5000/api/users/profile",
-                    {
-                        method: "PUT",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json",
-
-                            "Authorization":
-                                `Bearer ${token}`
-                        },
-
-                        body: JSON.stringify({
-                            name: name,
-                            phone: phone,
-                            address: address
-                        })
-                    }
-                );
-
-
-                const data =
-                    await response.json();
-
-                console.log(
-                    "Update Profile API response:",
-                    data
-                );
-
-
-                if (!response.ok || !data.success) {
-
-                    alert(
-                        data.message ||
-                        "Unable to update profile."
-                    );
+                    editName.focus();
 
                     return;
                 }
 
 
                 // ======================================
-                // UPDATE LOCAL STORAGE
+                // CHECK PHONE
                 // ======================================
 
-                localStorage.setItem(
-                    "user",
-                    JSON.stringify(data.user)
-                );
+                if (!phone) {
+
+                    alert("Phone number cannot be empty.");
+
+                    editPhone.focus();
+
+                    return;
+                }
 
 
                 // ======================================
-                // UPDATE DISPLAY
+                // CHECK ADDRESS
                 // ======================================
 
-                userName.textContent =
-                    data.user.name;
+                if (!address) {
 
-                userEmail.textContent =
-                    data.user.email;
+                    alert("Address cannot be empty.");
 
-                userPhone.textContent =
-                    data.user.phone ||
-                    "Not available";
+                    editAddress.focus();
 
-                userAddress.textContent =
-                    data.user.address ||
-                    "Not available";
+                    return;
+                }
 
 
-                // Return to normal mode
-                setEditMode(false);
+                try {
+
+                    saveProfileBtn.disabled = true;
+
+                    saveProfileBtn.textContent =
+                        "Saving...";
 
 
-                alert(
-                    "Profile updated successfully!"
-                );
+                    // ======================================
+                    // UPDATE PROFILE API
+                    // ======================================
+
+                    const response = await fetch(
+                        `${API_URL}/users/profile`,
+                        {
+                            method: "PUT",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+
+                                "Authorization":
+                                    `Bearer ${token}`
+                            },
+
+                            body: JSON.stringify({
+                                name: name,
+                                phone: phone,
+                                address: address
+                            })
+                        }
+                    );
 
 
-            } catch (error) {
+                    const data =
+                        await response.json();
 
-                console.error(
-                    "Update profile error:",
-                    error
-                );
+                    console.log(
+                        "Update Profile API response:",
+                        data
+                    );
 
-                alert(
-                    "Unable to connect to the server."
-                );
 
-            } finally {
+                    // ======================================
+                    // CHECK UPDATE RESPONSE
+                    // ======================================
 
-                saveProfileBtn.disabled = false;
+                    if (!response.ok || !data.success) {
 
-                saveProfileBtn.textContent =
-                    "Save Changes";
+                        alert(
+                            data.message ||
+                            "Unable to update profile."
+                        );
+
+                        return;
+                    }
+
+
+                    // ======================================
+                    // UPDATE LOCAL STORAGE
+                    // ======================================
+
+                    localStorage.setItem(
+                        "user",
+                        JSON.stringify(data.user)
+                    );
+
+
+                    // ======================================
+                    // UPDATE DISPLAY
+                    // ======================================
+
+                    userName.textContent =
+                        data.user.name ||
+                        "Not available";
+
+                    userEmail.textContent =
+                        data.user.email ||
+                        "Not available";
+
+                    userPhone.textContent =
+                        data.user.phone ||
+                        "Not available";
+
+                    userAddress.textContent =
+                        data.user.address ||
+                        "Not available";
+
+
+                    // ======================================
+                    // RETURN TO NORMAL MODE
+                    // ======================================
+
+                    setEditMode(false);
+
+
+                    alert(
+                        "Profile updated successfully!"
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Update profile error:",
+                        error
+                    );
+
+                    alert(
+                        "Unable to connect to the server."
+                    );
+
+                } finally {
+
+                    saveProfileBtn.disabled = false;
+
+                    saveProfileBtn.textContent =
+                        "Save Changes";
+                }
             }
-        }
-    );
+        );
+    }
 
 
     // ======================================
@@ -399,7 +448,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
-    // Navbar logout
+    // ======================================
+    // NAVBAR LOGOUT
+    // ======================================
+
     if (logoutBtn) {
 
         logoutBtn.addEventListener(
@@ -409,7 +461,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 
-    // Profile logout
+    // ======================================
+    // PROFILE LOGOUT
+    // ======================================
+
     if (logoutBtn2) {
 
         logoutBtn2.addEventListener(

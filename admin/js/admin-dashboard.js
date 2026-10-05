@@ -286,11 +286,11 @@ async function loadDashboardData() {
 
     try {
 
+        const API_URL = "https://vegges.onrender.com/api";
         const response = await fetch(
-            "http://localhost:5000/api/admin/dashboard",
+            `${API_URL}/dashboard`,
             {
                 method: "GET",
-
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": "Bearer " + adminToken
