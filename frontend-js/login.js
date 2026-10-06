@@ -1,7 +1,6 @@
 // ======================================
 // VEGGES LOGIN SYSTEM
 // ======================================
-
 const loginForm = document.getElementById("loginForm");
 
 const passwordInput = document.getElementById("password");
