@@ -1,6 +1,7 @@
 // ======================================
 // VEGGES LOGIN SYSTEM
 // ======================================
+const API_URL = "https://vegges.onrender.com/api";
 const loginForm = document.getElementById("loginForm");
 
 const passwordInput = document.getElementById("password");
