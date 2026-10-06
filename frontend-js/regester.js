@@ -1,7 +1,7 @@
 // ================================
 // VEGGES REGISTER
 // ================================
-
+const API_URL = "https://vegges.onrender.com/api";
 const registerForm = document.getElementById("registerForm");
 
 registerForm.addEventListener("submit", async (e) => {
