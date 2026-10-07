@@ -118,11 +118,23 @@ loginForm.addEventListener("submit", async (e) => {
 
 
             // Save JWT Token
+const token = data.token || data.accessToken;
 
-            localStorage.setItem(
-                "token",
-                data.token
-            );
+if (!token) {
+    console.error("Login response does not contain a token:", data);
+    alert("Login successful, but authentication token was not received.");
+    return;
+}
+
+localStorage.setItem("token", token);
+
+// Save User Details
+localStorage.setItem(
+    "user",
+    JSON.stringify(data.user)
+);
+
+console.log("TOKEN SAVED:", localStorage.getItem("token"));
 
 
             // Save User Details
