@@ -167,22 +167,40 @@ if (categoryContainer) {
 // USER ICON - LOGIN / PROFILE
 // ======================================
 
-document.addEventListener("DOMContentLoaded", () => {
+
+
+    // ======================================
+// USER ICON - LOGIN / PROFILE
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
 
     const userIcon = document.getElementById("userIcon");
 
-    if (!userIcon) return;
+    if (!userIcon) {
+        console.log("User icon not found");
+        return;
+    }
 
     const token = localStorage.getItem("token");
 
-    if (token) {
+    console.log("User Icon Token:", token);
+
+    if (token && token.trim() !== "") {
+
         // User is logged in
         userIcon.href = "profile.html";
         userIcon.title = "Profile";
+
+        console.log("User is logged in → Profile");
+
     } else {
+
         // User is logged out
         userIcon.href = "login.html";
         userIcon.title = "Login";
+
+        console.log("User is logged out → Login");
     }
 
 });
