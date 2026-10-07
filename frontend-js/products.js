@@ -1,7 +1,9 @@
 // ======================================
 // VEGGES PRODUCTS
 // ======================================
+
 const API_URL = "https://vegges.onrender.com/api";
+
 const productContainer =
     document.getElementById("productContainer");
 
@@ -10,6 +12,7 @@ const pageTitle =
 
 const categoryFilter =
     document.getElementById("categoryFilter");
+
 
 // ======================================
 // GET CATEGORY FROM URL
@@ -167,7 +170,9 @@ async function loadCategories() {
                 }
 
 
-                // Category click
+                // ======================================
+                // CATEGORY CLICK
+                // ======================================
 
                 button.addEventListener(
                     "click",
@@ -374,7 +379,9 @@ function displayProducts(products) {
     productContainer.innerHTML = "";
 
 
-    // No products
+    // ======================================
+    // NO PRODUCTS
+    // ======================================
 
     if (
         !products ||
@@ -387,6 +394,7 @@ function displayProducts(products) {
             '</h2>';
 
         return;
+
     }
 
 
@@ -407,7 +415,9 @@ function displayProducts(products) {
             );
 
 
-            // Product image
+            // ======================================
+            // PRODUCT IMAGE
+            // ======================================
 
             const image =
                 product.image ||
@@ -415,7 +425,7 @@ function displayProducts(products) {
 
 
             // ======================================
-            // PRODUCT CARD
+            // PRODUCT CARD CONTENT
             // ======================================
 
             productCard.innerHTML =
@@ -435,9 +445,27 @@ function displayProducts(products) {
 
                 '<button onclick="addToCart(\'' +
                 product._id +
-                '\')">' +
+                '\'); event.stopPropagation();">' +
                 'Add to Cart 🛒' +
                 '</button>';
+
+
+            // ======================================
+            // OPEN PRODUCT DETAILS
+            // ======================================
+
+            productCard.addEventListener(
+                "click",
+                function () {
+
+                    window.location.href =
+                        "product-details.html?id=" +
+                        encodeURIComponent(
+                            product._id
+                        );
+
+                }
+            );
 
 
             productContainer.appendChild(
@@ -478,6 +506,7 @@ async function addToCart(productId) {
                 "login.html";
 
             return;
+
         }
 
 
@@ -540,7 +569,9 @@ async function addToCart(productId) {
             ) || [];
 
 
-        // Get product details
+        // ======================================
+        // GET PRODUCT DETAILS
+        // ======================================
 
         const productsResponse =
             await fetch(
