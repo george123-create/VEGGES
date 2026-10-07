@@ -1,11 +1,14 @@
 // ======================================
 // VEGGES LOGIN SYSTEM
 // ======================================
-const API_URL = "https://vegges.onrender.com/api";
-const loginForm = document.getElementById("loginForm");
 
-const passwordInput = document.getElementById("password");
+const LOGIN_API_URL = "https://vegges.onrender.com/api";
 
+const loginForm =
+    document.getElementById("loginForm");
+
+const passwordInput =
+    document.getElementById("password");
 
 const togglePassword =
     document.getElementById("togglePassword");
@@ -14,202 +17,253 @@ const loginNotification =
     document.getElementById("loginNotification");
 
 
-
-
-
 // ======================================
-// SHOW / HIDE PASSWORD - EYE BUTTON
+// SHOW / HIDE PASSWORD
 // ======================================
 
-togglePassword.addEventListener("click", function () {
+if (togglePassword && passwordInput) {
 
-    if (passwordInput.type === "password") {
+    togglePassword.addEventListener("click", function () {
 
-        passwordInput.type = "text";
+        if (passwordInput.type === "password") {
 
-        this.innerHTML =
-            '<i class="fa-solid fa-eye-slash"></i>';
+            passwordInput.type = "text";
 
-    } else {
+            this.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
 
-        passwordInput.type = "password";
+        } else {
 
-        this.innerHTML =
-            '<i class="fa-solid fa-eye"></i>';
+            passwordInput.type = "password";
 
-    }
+            this.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
 
-});
+        }
+
+    });
+
+}
 
 
 // ======================================
 // LOGIN FORM
 // ======================================
 
-loginForm.addEventListener("submit", async (e) => {
+if (loginForm) {
 
-    e.preventDefault();
+    loginForm.addEventListener("submit", async (e) => {
 
-
-    const email =
-        document.getElementById("email")
-            .value
-            .trim();
+        e.preventDefault();
 
 
-    const password =
-        document.getElementById("password")
-            .value
-            .trim();
+        const email =
+            document.getElementById("email")
+                .value
+                .trim();
 
 
-    // ==================================
-    // DISABLE LOGIN BUTTON
-    // ==================================
-
-    const loginButton =
-        document.getElementById("loginButton");
-
-    loginButton.disabled = true;
-
-    loginButton.textContent = "Logging in...";
+        const password =
+            document.getElementById("password")
+                .value
+                .trim();
 
 
-    try {
-
-        // ==================================
-        // SEND LOGIN REQUEST
-        // ==================================
-
-        const response = await fetch(
-            `${API_URL}/users/login`,
-            {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify({
-
-                    email: email,
-
-                    password: password
-
-                })
-
-            }
-        );
-
-
-        const data =
-            await response.json();
-
-
-        console.log("Login Response:", data);
+        const loginButton =
+            document.getElementById("loginButton");
 
 
         // ==================================
-        // LOGIN SUCCESS
+        // DISABLE LOGIN BUTTON
         // ==================================
 
-        if (data.success) {
+        loginButton.disabled = true;
+
+        loginButton.textContent =
+            "Logging in...";
 
 
-            // Save JWT Token
-const token = data.token || data.accessToken;
+        try {
 
-if (!token) {
-    console.error("Login response does not contain a token:", data);
-    alert("Login successful, but authentication token was not received.");
-    return;
-}
+            // ==================================
+            // SEND LOGIN REQUEST
+            // ==================================
 
-localStorage.setItem("token", token);
+            const response = await fetch(
+                `${LOGIN_API_URL}/users/login`,
+                {
+                    method: "POST",
 
-// Save User Details
-localStorage.setItem(
-    "user",
-    JSON.stringify(data.user)
-);
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-console.log("TOKEN SAVED:", localStorage.getItem("token"));
-
-
-            // Save User Details
-
-            localStorage.setItem(
-                "user",
-                JSON.stringify(data.user)
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+                }
             );
+
+
+            const data =
+                await response.json();
 
 
             console.log(
-                "Login successful:",
-                data.user
+                "Login Response:",
+                data
             );
 
 
             // ==================================
-            // SHOW SUCCESS NOTIFICATION
+            // LOGIN SUCCESS
             // ==================================
 
-            loginNotification.classList.add(
-                "show"
+            if (data.success) {
+
+
+                // ==================================
+                // GET JWT TOKEN
+                // ==================================
+
+                const token =
+                    data.token ||
+                    data.accessToken;
+
+
+                if (!token) {
+
+                    console.error(
+                        "Login response does not contain a token:",
+                        data
+                    );
+
+                    alert(
+                        "Login successful, but authentication token was not received."
+                    );
+
+                    loginButton.disabled = false;
+
+                    loginButton.textContent =
+                        "Login";
+
+                    return;
+                }
+
+
+                // ==================================
+                // SAVE JWT TOKEN
+                // ==================================
+
+                localStorage.setItem(
+                    "token",
+                    token
+                );
+
+
+                // ==================================
+                // SAVE USER DETAILS
+                // ==================================
+
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(data.user)
+                );
+
+
+                // ==================================
+                // VERIFY STORAGE
+                // ==================================
+
+                console.log(
+                    "TOKEN SAVED:",
+                    localStorage.getItem("token")
+                );
+
+                console.log(
+                    "USER SAVED:",
+                    localStorage.getItem("user")
+                );
+
+
+                console.log(
+                    "Login successful:",
+                    data.user
+                );
+
+
+                // ==================================
+                // SHOW SUCCESS NOTIFICATION
+                // ==================================
+
+                if (loginNotification) {
+
+                    loginNotification.classList.add(
+                        "show"
+                    );
+
+                }
+
+
+                // ==================================
+                // GO TO HOME
+                // ==================================
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "index.html";
+
+                }, 1000);
+
+
+            } else {
+
+
+                // ==================================
+                // LOGIN FAILED
+                // ==================================
+
+                alert(
+                    data.message ||
+                    "Invalid email or password."
+                );
+
+
+                loginButton.disabled = false;
+
+                loginButton.textContent =
+                    "Login";
+
+            }
+
+
+        } catch (error) {
+
+
+            // ==================================
+            // LOGIN ERROR
+            // ==================================
+
+            console.error(
+                "Login Error:",
+                error
             );
 
-
-            // ==================================
-            // GO TO HOME AFTER 1 SECOND
-            // ==================================
-
-            setTimeout(() => {
-
-                window.location.href =
-                    "index.html";
-
-            }, 1000);
-
-
-        } else {
-
-
-            // ==================================
-            // LOGIN FAILED
-            // ==================================
 
             alert(
-                data.message ||
-                "Invalid email or password."
+                "Unable to connect to server. Please try again."
             );
 
 
             loginButton.disabled = false;
 
-            loginButton.textContent = "Login";
+            loginButton.textContent =
+                "Login";
 
         }
 
+    });
 
-    } catch (error) {
-
-
-        console.error(
-            "Login Error:",
-            error
-        );
-
-
-        alert(
-            "Unable to connect to server. Please try again."
-        );
-
-
-        loginButton.disabled = false;
-
-        loginButton.textContent = "Login";
-
-    }
-
-});
+}
