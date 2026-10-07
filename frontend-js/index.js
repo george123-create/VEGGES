@@ -163,3 +163,26 @@ if (categoryContainer) {
     loadCategories();
 
 }
+// ======================================
+// USER ICON - LOGIN / PROFILE
+// ======================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const userIcon = document.getElementById("userIcon");
+
+    if (!userIcon) return;
+
+    const token = localStorage.getItem("token");
+
+    if (token) {
+        // User is logged in
+        userIcon.href = "profile.html";
+        userIcon.title = "Profile";
+    } else {
+        // User is logged out
+        userIcon.href = "login.html";
+        userIcon.title = "Login";
+    }
+
+});

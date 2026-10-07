@@ -63,11 +63,34 @@ quantityInput.addEventListener("change",()=>{
 
 const cartButton = document.querySelector(".cart-btn");
 
-
 cartButton.addEventListener("click", () => {
 
+    // ======================================
+    // CHECK LOGIN
+    // ======================================
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const user = JSON.parse(
+        localStorage.getItem("user")
+    );
+
+    if (!user || !user._id) {
+
+        alert("Please login before adding products to cart.");
+
+        window.location.href = "login.html";
+
+        return;
+    }
+
+
+    // ======================================
+    // ADD PRODUCT TO CART
+    // ======================================
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("cart")
+        ) || [];
 
 
     const product = {
@@ -87,12 +110,11 @@ cartButton.addEventListener("click", () => {
     );
 
 
-    if(existingProduct){
+    if (existingProduct) {
 
         existingProduct.quantity += quantity;
 
-    }
-    else{
+    } else {
 
         cart.push(product);
 
@@ -106,6 +128,5 @@ cartButton.addEventListener("click", () => {
 
 
     alert("Product added to cart 🛒");
-
 
 });
