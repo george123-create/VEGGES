@@ -1,5 +1,5 @@
-```javascript
-const API_URL = "https://vegges.onrender.com/api";
+javascript
+const REGISTER_API_URL = "https://vegges.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("registerForm");
@@ -17,33 +17,43 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("password")?.value;
         const confirmPassword = document.getElementById("confirmPassword")?.value;
 
+        // Validate required fields
         if (!name || !email || !password || !confirmPassword) {
             alert("Please fill in all fields.");
             return;
         }
 
+        // Validate password confirmation
         if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return;
         }
 
-        const button = registerForm.querySelector('button[type="submit"]');
-        if (button) button.disabled = true;
+        // Prevent duplicate submissions
+        const submitButton = registerForm.querySelector('button[type="submit"]');
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Registering...";
+        }
 
         try {
-            const response = await fetch(API_URL + "/users/register", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    password: password
-                })
-            });
+            const response = await fetch(
+                `${REGISTER_API_URL}/users/register`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        password: password
+                    })
+                }
+            );
 
-            const data = await response.json();
+            const data = await response.json().catch(() => ({}));
 
             console.log("Registration status:", response.status);
             console.log("Registration response:", data);
@@ -52,14 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Registration successful! Please log in.");
                 window.location.href = "login.html";
             } else {
-                alert(data.message || "Registration failed.");
+                alert(data.message || "Registration failed. Please try again.");
             }
         } catch (error) {
             console.error("Registration error:", error);
             alert("Unable to connect to the server. Please try again.");
         } finally {
-            if (button) button.disabled = false;
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Register";
+            }
         }
     });
 });
-```
