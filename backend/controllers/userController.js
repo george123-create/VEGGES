@@ -7,8 +7,14 @@ const jwt = require("jsonwebtoken");
 // ==========================
 const registerUser = async (req, res) => {
     try {
-        const { name, email, password, phone, address } = req.body;
+const { name, password, phone, address } = req.body;
+const email = req.body.email?.trim().toLowerCase();
 
+if (!name || !email || !password) {
+    return res.status(400).json({
+        message: "Name, email and password are required"
+    });
+}
         // Check if user already exists
         const existingUser = await User.findOne({ email });
 
@@ -50,8 +56,14 @@ const registerUser = async (req, res) => {
 // ==========================
 const loginUser = async (req, res) => {
     try {
-        const { email, password } = req.body;
+const email = req.body.email?.trim().toLowerCase();
+const { password } = req.body;
 
+if (!email || !password) {
+    return res.status(400).json({
+        message: "Email and password are required"
+    });
+}
         // Find user
         const user = await User.findOne({ email });
 
