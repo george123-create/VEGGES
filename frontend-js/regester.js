@@ -1,4 +1,3 @@
-javascript
 const REGISTER_API_URL = "https://vegges.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -12,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
     registerForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        const name = document.getElementById("name")?.value.trim();
-        const email = document.getElementById("email")?.value.trim().toLowerCase();
-        const password = document.getElementById("password")?.value;
-        const confirmPassword = document.getElementById("confirmPassword")?.value;
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim().toLowerCase();
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
 
         // Validate required fields
         if (!name || !email || !password || !confirmPassword) {
@@ -30,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Prevent duplicate submissions
-        const submitButton = registerForm.querySelector('button[type="submit"]');
+        const submitButton = registerForm.querySelector(
+            'button[type="submit"]'
+        );
 
         if (submitButton) {
             submitButton.disabled = true;
@@ -62,7 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Registration successful! Please log in.");
                 window.location.href = "login.html";
             } else {
-                alert(data.message || "Registration failed. Please try again.");
+                alert(
+                    data.message ||
+                    "Registration failed. Please try again."
+                );
             }
         } catch (error) {
             console.error("Registration error:", error);
