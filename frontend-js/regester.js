@@ -1,5 +1,4 @@
 const REGISTER_API_URL = "https://vegges.onrender.com/api";
-
 document.addEventListener("DOMContentLoaded", function () {
     const registerForm = document.getElementById("registerForm");
 
