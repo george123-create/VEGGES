@@ -454,18 +454,14 @@ function displayProducts(products) {
             // OPEN PRODUCT DETAILS
             // ======================================
 
-            productCard.addEventListener(
-                "click",
-                function () {
+            
+              productCard.addEventListener("click", function () {
+    console.log("Product clicked:", product.name, product._id);
 
-                    window.location.href =
-                        "product-details.html?id=" +
-                        encodeURIComponent(
-                            product._id
-                        );
-
-                }
-            );
+    window.location.href =
+        "product-details.html?id=" +
+        encodeURIComponent(product._id);
+});
 
 
             productContainer.appendChild(
@@ -713,3 +709,38 @@ loadProducts();
 console.log(
     "✅ VEGGES Products loaded successfully"
 );
+// ======================================
+// USER ICON - LOGIN / PROFILE
+// ======================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const userIcon = document.getElementById("userIcon");
+
+    if (!userIcon) {
+        console.log("User icon not found on Products page");
+        return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    if (token && token.trim() !== "") {
+        userIcon.href = "profile.html";
+        userIcon.title = "Profile";
+
+        const iconText = document.getElementById("userIconText");
+        if (iconText) {
+            iconText.textContent = "Profile";
+        }
+
+    } else {
+        userIcon.href = "login.html";
+        userIcon.title = "Login";
+
+        const iconText = document.getElementById("userIconText");
+        if (iconText) {
+            iconText.textContent = "Login";
+        }
+    }
+
+});
