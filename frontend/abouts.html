@@ -1,420 +1,255 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>VEGGES - About Us</title>
 
     <!-- CSS -->
-
     <link rel="stylesheet" href="../frontend-css/style.css">
     <link rel="stylesheet" href="../frontend-css/navbar.css">
     <link rel="stylesheet" href="../frontend-css/footer.css">
     <link rel="stylesheet" href="../frontend-css/abouts.css">
 
     <!-- Font Awesome -->
-
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     >
-
 </head>
-
 
 <body>
 
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
 
-<!-- =========================
-     NAVBAR
-========================== -->
+            <!-- Logo -->
+            <div class="logo">
+                🌿 <span>VEGGES</span>
+            </div>
 
-<header>
+            <!-- Navigation -->
+            <ul class="nav-links">
 
-    <nav class="navbar">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-        <!-- Logo -->
+                <li>
+                    <a href="products.html">Products</a>
+                </li>
 
-        <div class="logo">
+                <li>
+                    <a href="abouts.html" class="active">About</a>
+                </li>
 
-            🌿 <span>VEGGES</span>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <!-- PROFILE / LOGIN -->
+                <li>
+                    <a href="login.html" id="userIcon" title="Login">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="userIconText">Login</span>
+                    </a>
+                </li>
+
+                <!-- CART -->
+                <li>
+                    <a href="cart.html" title="Shopping Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Cart
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+
+        <div class="about-hero-content">
+            <h1>About VEGGES</h1>
+
+            <p>
+                Fresh vegetables. Healthy choices. Delivered to your doorstep.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- ABOUT INTRODUCTION -->
+    <section class="about-section">
+
+        <div class="about-container">
+
+            <div class="about-content">
+
+                <h2>Who We Are</h2>
+
+                <p>
+                    VEGGES is a modern online vegetable shopping platform
+                    created to make fresh and quality vegetables easily
+                    accessible to everyone.
+                </p>
+
+                <p>
+                    We connect customers with fresh vegetables through a
+                    simple and convenient online shopping experience.
+                </p>
+
+                <p>
+                    Our goal is to make grocery shopping easier, faster,
+                    and more convenient for every customer.
+                </p>
+
+            </div>
+
+            <div class="about-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
 
         </div>
 
+    </section>
 
-        <!-- Navigation -->
+    <!-- WHAT WE OFFER -->
+    <section class="offer-section">
 
-        <ul class="nav-links">
+        <h2>Why Choose VEGGES?</h2>
 
-            <li>
+        <div class="offer-container">
 
-                <a href="index.html">
+            <div class="offer-card">
+                <i class="fa-solid fa-carrot"></i>
+                <h3>Fresh Products</h3>
+                <p>
+                    We focus on providing fresh and quality vegetables
+                    for your everyday needs.
+                </p>
+            </div>
 
-                    Home
+            <div class="offer-card">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h3>Easy Shopping</h3>
+                <p>
+                    Browse products, add them to your cart, and place
+                    your order with just a few clicks.
+                </p>
+            </div>
 
-                </a>
+            <div class="offer-card">
+                <i class="fa-solid fa-truck"></i>
+                <h3>Convenient Delivery</h3>
+                <p>
+                    Get your selected vegetables delivered conveniently
+                    to your doorstep.
+                </p>
+            </div>
 
-            </li>
+            <div class="offer-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Reliable Service</h3>
+                <p>
+                    We aim to provide a simple, reliable, and
+                    customer-friendly shopping experience.
+                </p>
+            </div>
 
+        </div>
 
-            <li>
+    </section>
 
-                <a href="products.html">
+    <!-- OUR MISSION -->
+    <section class="mission-section">
 
-                    Products
+        <div class="mission-container">
 
-                </a>
+            <div class="mission-icon">
+                <i class="fa-solid fa-bullseye"></i>
+            </div>
 
-            </li>
+            <div class="mission-content">
 
+                <h2>Our Mission</h2>
 
-            <li>
+                <p>
+                    Our mission is to make fresh vegetable shopping
+                    simple, accessible, and convenient through technology.
 
-                <a href="abouts.html" class="active">
+                    VEGGES aims to provide customers with a smooth
+                    online grocery experience while maintaining a focus
+                    on freshness and quality.
+                </p>
 
-                    About
+            </div>
 
-                </a>
+        </div>
 
-            </li>
+    </section>
 
+    <!-- CALL TO ACTION -->
+    <section class="about-cta">
 
-            <li>
-
-                <a href="contact.html">
-
-                    Contact
-
-                </a>
-
-            </li>
-
-
-            <li>
-
-                <a href="login.html">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    Login
-
-                </a>
-
-            </li>
-
-
-            <li>
-
-                <a href="cart.html">
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    Cart
-
-                </a>
-
-            </li>
-
-        </ul>
-
-    </nav>
-
-</header>
-
-
-
-<!-- =========================
-     ABOUT HERO
-========================== -->
-
-<section class="about-hero">
-
-    <div class="about-hero-content">
-
-        <h1>
-
-            About VEGGES
-
-        </h1>
-
+        <h2>Ready to Shop Fresh?</h2>
 
         <p>
-
-            Fresh vegetables. Healthy choices. Delivered to your doorstep.
-
+            Explore our fresh vegetables and place your order today.
         </p>
 
-    </div>
+        <a href="products.html">
+            Shop Now 🛒
+        </a>
 
-</section>
+    </section>
 
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 VEGGES. Fresh vegetables delivered.
+        </p>
+    </footer>
 
+    <!-- PROFILE / LOGIN NAVIGATION -->
+    <script>
+        (function () {
 
-<!-- =========================
-     ABOUT INTRODUCTION
-========================== -->
+            const userIcon = document.getElementById("userIcon");
+            const userIconText = document.getElementById("userIconText");
 
-<section class="about-section">
+            if (!userIcon) return;
 
-    <div class="about-container">
+            const token = localStorage.getItem("token");
 
+            if (token && token.trim() !== "") {
 
-        <div class="about-content">
+                userIcon.href = "profile.html";
+                userIcon.title = "Profile";
 
-            <h2>
+                if (userIconText) {
+                    userIconText.textContent = "Profile";
+                }
 
-                Who We Are
+            } else {
 
-            </h2>
+                userIcon.href = "login.html";
+                userIcon.title = "Login";
 
+                if (userIconText) {
+                    userIconText.textContent = "Login";
+                }
 
-            <p>
+            }
 
-                VEGGES is a modern online vegetable shopping platform
-                created to make fresh and quality vegetables easily
-                accessible to everyone.
-
-            </p>
-
-
-            <p>
-
-                We connect customers with fresh vegetables through a
-                simple and convenient online shopping experience.
-
-            </p>
-
-
-            <p>
-
-                Our goal is to make grocery shopping easier, faster,
-                and more convenient for every customer.
-
-            </p>
-
-        </div>
-
-
-        <div class="about-icon">
-
-            <i class="fa-solid fa-leaf"></i>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     WHAT WE OFFER
-========================== -->
-
-<section class="offer-section">
-
-    <h2>
-
-        Why Choose VEGGES?
-
-    </h2>
-
-
-    <div class="offer-container">
-
-
-        <!-- Fresh Products -->
-
-        <div class="offer-card">
-
-            <i class="fa-solid fa-carrot"></i>
-
-            <h3>
-
-                Fresh Products
-
-            </h3>
-
-            <p>
-
-                We focus on providing fresh and quality vegetables
-                for your everyday needs.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- Easy Shopping -->
-
-        <div class="offer-card">
-
-            <i class="fa-solid fa-cart-shopping"></i>
-
-            <h3>
-
-                Easy Shopping
-
-            </h3>
-
-            <p>
-
-                Browse products, add them to your cart, and place
-                your order with just a few clicks.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- Convenient Delivery -->
-
-        <div class="offer-card">
-
-            <i class="fa-solid fa-truck"></i>
-
-            <h3>
-
-                Convenient Delivery
-
-            </h3>
-
-            <p>
-
-                Get your selected vegetables delivered conveniently
-                to your doorstep.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- Secure Ordering -->
-
-        <div class="offer-card">
-
-            <i class="fa-solid fa-shield-halved"></i>
-
-            <h3>
-
-                Reliable Service
-
-            </h3>
-
-            <p>
-
-                We aim to provide a simple, reliable, and
-                customer-friendly shopping experience.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     OUR MISSION
-========================== -->
-
-<section class="mission-section">
-
-    <div class="mission-container">
-
-
-        <div class="mission-icon">
-
-            <i class="fa-solid fa-bullseye"></i>
-
-        </div>
-
-
-        <div class="mission-content">
-
-            <h2>
-
-                Our Mission
-
-            </h2>
-
-
-            <p>
-
-                Our mission is to make fresh vegetable shopping
-                simple, accessible, and convenient through technology.
-
-                VEGGES aims to provide customers with a smooth
-                online grocery experience while maintaining a focus
-                on freshness and quality.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CALL TO ACTION
-========================== -->
-
-<section class="about-cta">
-
-    <h2>
-
-        Ready to Shop Fresh?
-
-    </h2>
-
-
-    <p>
-
-        Explore our fresh vegetables and place your order today.
-
-    </p>
-
-
-    <a href="products.html">
-
-        Shop Now 🛒
-
-    </a>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer>
-
-    <p>
-
-        © 2026 VEGGES. Fresh vegetables delivered.
-
-    </p>
-
-</footer>
-
-
+        })();
+    </script>
 
 </body>
-
 </html>
+```
